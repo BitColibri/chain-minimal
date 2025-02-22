@@ -2,9 +2,8 @@ package app
 
 import (
 	_ "embed"
-	"io"
-
 	dbm "github.com/cosmos/cosmos-db"
+	"io"
 
 	"cosmossdk.io/core/appconfig"
 	"cosmossdk.io/depinject"
@@ -31,7 +30,8 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
 	appv1alpha1 "cosmossdk.io/api/cosmos/app/v1alpha1"
-	_ "cosmossdk.io/api/cosmos/tx/config/v1"          // import for side-effects
+	_ "cosmossdk.io/api/cosmos/tx/config/v1" // import for side-effects
+	_ "github.com/bitcolibri/birdFeed/module"
 	_ "github.com/cosmos/cosmos-sdk/x/auth"           // import for side-effects
 	_ "github.com/cosmos/cosmos-sdk/x/auth/tx/config" // import for side-effects
 	_ "github.com/cosmos/cosmos-sdk/x/bank"           // import for side-effects

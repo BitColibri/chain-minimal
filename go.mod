@@ -1,6 +1,8 @@
 module github.com/cosmosregistry/chain-minimal
 
-go 1.23
+go 1.23.2
+
+toolchain go1.23.6
 
 replace (
 	// Fix upstream GHSA-h395-qcrw-5vmq vulnerability.
@@ -20,6 +22,7 @@ require (
 	cosmossdk.io/math v1.5.0
 	cosmossdk.io/store v1.1.1
 	cosmossdk.io/tools/confix v0.1.2
+	github.com/bitcolibri/birdFeed v0.0.1
 	github.com/cometbft/cometbft v0.38.17
 	github.com/cosmos/cosmos-db v1.1.1
 	github.com/cosmos/cosmos-sdk v0.50.12
