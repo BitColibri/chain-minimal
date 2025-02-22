@@ -5,7 +5,6 @@ go 1.23.2
 toolchain go1.23.6
 
 replace (
-	github.com/bitcolibri/birdFeed => ../birdFeed
 	// Fix upstream GHSA-h395-qcrw-5vmq vulnerability.
 	// TODO Remove it: https://github.com/cosmos/cosmos-sdk/issues/10409
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.7.0
@@ -23,7 +22,7 @@ require (
 	cosmossdk.io/math v1.5.0
 	cosmossdk.io/store v1.1.1
 	cosmossdk.io/tools/confix v0.1.2
-	github.com/bitcolibri/birdFeed v0.0.0-00010101000000-000000000000
+	github.com/bitcolibri/birdFeed v0.0.1
 	github.com/cometbft/cometbft v0.38.17
 	github.com/cosmos/cosmos-db v1.1.1
 	github.com/cosmos/cosmos-sdk v0.50.12
