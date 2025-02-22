@@ -13,6 +13,7 @@ import (
 	"cosmossdk.io/log"
 	storetypes "cosmossdk.io/store/types"
 
+	birdFeedkeeper "github.com/bitcolibri/birdFeed/keeper"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/codec"
@@ -31,7 +32,8 @@ import (
 	genutiltypes "github.com/cosmos/cosmos-sdk/x/genutil/types"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
-	_ "cosmossdk.io/api/cosmos/tx/config/v1"          // import for side-effects
+	_ "cosmossdk.io/api/cosmos/tx/config/v1" // import for side-effects
+	_ "github.com/bitcolibri/birdFeed/module"
 	_ "github.com/cosmos/cosmos-sdk/x/auth"           // import for side-effects
 	_ "github.com/cosmos/cosmos-sdk/x/auth/tx/config" // import for side-effects
 	_ "github.com/cosmos/cosmos-sdk/x/bank"           // import for side-effects
@@ -68,6 +70,7 @@ type MiniApp struct {
 	StakingKeeper         *stakingkeeper.Keeper
 	DistrKeeper           distrkeeper.Keeper
 	ConsensusParamsKeeper consensuskeeper.Keeper
+	BirdFeedKeeper        birdFeedkeeper.Keeper
 
 	// simulation manager
 	sm *module.SimulationManager
@@ -127,6 +130,7 @@ func NewMiniApp(
 		&app.StakingKeeper,
 		&app.DistrKeeper,
 		&app.ConsensusParamsKeeper,
+		&app.BirdFeedKeeper,
 	); err != nil {
 		return nil, err
 	}
